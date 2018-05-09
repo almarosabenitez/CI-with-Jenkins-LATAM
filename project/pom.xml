@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>ci.jenkins.aws</groupId>
-        <artifactId>project</artifactId>
+        <artifactId>proj</artifactId>
         <version>1.0-RAMA</version>
     </parent>
 
