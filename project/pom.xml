@@ -4,7 +4,7 @@
     <parent>
         <groupId>CI.Jenkins.AWS</groupId>
         <artifactId>project</artifactId>
-        <version>1.0-DEMO</version>
+        <version>1.0-RAMA</version>
     </parent>
 
     <artifactId>project</artifactId>
