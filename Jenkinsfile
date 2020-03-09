@@ -6,7 +6,7 @@ pipeline {
     PROJECT_ID = "My First Project"
     CLUSTER_NAME = 'kube-demo'
     LOCATION = 'us-central1-c'
-    CREDENTIALS_ID = 'google-credentials'
+    CREDENTIALS_ID = 'kube-auth'
   }   
  stages {
      stage('Checkout SCM') {
