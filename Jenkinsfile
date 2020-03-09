@@ -8,7 +8,7 @@ pipeline {
     LOCATION = 'us-central1-c'
     CREDENTIALS_ID = 'My First Project'
   }   
-    stages {
+ stages {
      stage('Checkout SCM') {
       steps {
        checkout scm
@@ -36,7 +36,7 @@ pipeline {
           }
         }
       }
-    }
+    
      stage('Deploy to Kubernetes') {
       steps {
        echo "Deploying to Kubernetes Cluster.."
