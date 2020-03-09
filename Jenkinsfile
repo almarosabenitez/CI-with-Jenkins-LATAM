@@ -31,10 +31,11 @@ pipeline {
       steps{
         script {
            appimage = docker.build( "almitarosita/devops:${env.BUILD_ID}")
-           docker.withRegistry("https://registry.hub.docker.com",'docker-hub-credentials') 
-           appimage.push()
-          }
-        }
+           docker.withRegistry("https://registry.hub.docker.com",'docker-hub-credentials') {
+              appimage.push()
+           }
+         }
+       }
       }
     
      stage('Deploy to Kubernetes') {
