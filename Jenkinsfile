@@ -31,7 +31,7 @@ pipeline {
       steps{
         script {
            appimage = docker.build( "almitarosita/devops:${env.BUILD_ID}")
-           docker.withRegistry('https://registry.hub.docker.com','docker-hub-credentials') 
+           docker.withRegistry("https://registry.hub.docker.com",'docker-hub-credentials') 
            appimage.push()
           }
         }
