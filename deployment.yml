@@ -2,20 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: myapp
+ name: myDevopsApp
 spec:
- Replicas:     3 desired | 1 updated | 4 total | 3 available | 1 unavailable
- StrategyType:  RollingUpdate
+ Replicas: 3
  selector:
   matchLabels:
-   app: myapp
+   app: myDevopsApp
  template:
   metadata:
    labels:
-    app: myapp
+    app: myDevopsApp
   spec:
    containers:
-    - name: myapp
+    - name: myDevopsApp
       image: almitarosita/devops:tagversion
       ports:
       - containerPort: 8080
@@ -23,11 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp
+  name: myDevopsApp
 spec:
   type: LoadBalancer 
   selector:
-   app: myapp
+   app: myDevopsApp
   ports:
     - protocol: TCP
       port: 80
