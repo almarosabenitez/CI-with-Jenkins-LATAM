@@ -1,4 +1,13 @@
-   
+pipeline {
+ 
+ agent any
+ 
+ environment {
+    PROJECT_ID = "My First Project"
+    CLUSTER_NAME = 'kube-demo'
+    LOCATION = 'us-central1-c'
+    CREDENTIALS_ID = 'My First Project'
+  }   
     stages {
      stage('Checkout SCM') {
       steps {
