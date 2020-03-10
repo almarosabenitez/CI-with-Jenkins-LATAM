@@ -6,7 +6,7 @@ pipeline {
     PROJECT_ID = "My First Project"
     CLUSTER_NAME = 'kube-demo'
     LOCATION = 'us-central1-c'
-    CREDENTIALS_ID = 'kube-auth'
+    CREDENTIALS_ID = 'google-credentials'
   }   
  stages {
      stage('Checkout SCM') {
@@ -44,7 +44,7 @@ pipeline {
        sh 'ls -ltr'
        sh 'pwd'
        sh "sed -i 's/tagversion/${env.BUILD_ID}/g' deployment.yaml"
-       step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
+       step($class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true)
        echo "Deployment to Kubernetes cluster completed.."
       }
      }
