@@ -3,10 +3,10 @@ pipeline {
  agent any
  
  environment {
-    PROJECT_ID = "My First Project"
+    PROJECT_ID = "myproject"
     CLUSTER_NAME = 'kube-demo'
     LOCATION = 'us-central1-c'
-    CREDENTIALS_ID = 'My First Project'
+    CREDENTIALS_ID = 'myproject'
   }   
  stages {
      stage('Checkout SCM') {
