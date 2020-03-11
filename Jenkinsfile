@@ -3,7 +3,7 @@ pipeline {
  agent any
  
  environment {
-    PROJECT_ID = "myproject"
+    PROJECT_ID = "vaulted-quarter-260801"
     CLUSTER_NAME = 'kube-demo'
     LOCATION = 'us-central1-c'
     CREDENTIALS_ID = 'myproject'
