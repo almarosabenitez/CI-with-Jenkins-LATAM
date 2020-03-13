@@ -6,7 +6,7 @@ pipeline {
     PROJECT_ID = "vaulted-quarter-260801"
     CLUSTER_NAME = 'kube-demo'
     LOCATION = 'us-central1-c'
-    CREDENTIALS_ID = 'myproject'
+    CREDENTIALS_ID = 'gcr'
   }   
  stages {
      stage('Checkout SCM') {
@@ -30,9 +30,11 @@ pipeline {
      stage('Build and push Docker Image') {
       steps{
         script {
-           appimage = docker.build( "almitarosita/devops:${env.BUILD_ID}")
-           docker.withRegistry("https://registry.hub.docker.com",'docker-hub-credentials') {
-              appimage.push()
+           //appimage = docker.build( "almitarosita/devops:${env.BUILD_ID}")
+           appimage = docker.build("gcr.io/almitarosita/vaulted-quarter-260801/devops:${env.BUILD_ID}")
+           //docker.withRegistry("https://registry.hub.docker.com",'docker-hub-credentials') 
+           docker.withRegistry('https://gcr.io','gcr:gcr'){
+              appimage.push("${env.BUILD_ID}")
            }
          }
        }
