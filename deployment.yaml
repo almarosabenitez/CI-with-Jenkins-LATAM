@@ -15,7 +15,7 @@ spec:
   spec:
    containers:
     - name: devops
-      image: almitarosita/devops:tagversion
+      image: gcr.io/almitarosita/vaulted-quarter-260801/devops:tagversion
       ports:
       - containerPort: 8080
 ---
