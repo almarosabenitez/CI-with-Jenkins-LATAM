@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: myDevopsApp
+ name: devops
 spec:
  Replicas: 3
  selector:
   matchLabels:
-   app: myDevopsApp
+   app: devops
  template:
   metadata:
    labels:
-    app: myDevopsApp
+    app: devops
   spec:
    containers:
-    - name: myDevopsApp
+    - name: devops
       image: almitarosita/devops:tagversion
       ports:
       - containerPort: 8080
@@ -22,11 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: myDevopsApp
+  name: devops
 spec:
   type: LoadBalancer 
   selector:
-   app: myDevopsApp
+   app: devops
   ports:
     - protocol: TCP
       port: 80
