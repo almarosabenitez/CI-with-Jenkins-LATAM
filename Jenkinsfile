@@ -31,7 +31,7 @@ pipeline {
       steps{
         script {
            //appimage = docker.build( "almitarosita/devops:${env.BUILD_ID}")
-           appimage = docker.build("gcr.io/almitarosita/vaulted-quarter-260801/devops:${env.BUILD_ID}")
+           appimage = docker.build("gcr.io/vaulted-quarter-260801/devops:${env.BUILD_ID}")
            //docker.withRegistry("https://registry.hub.docker.com",'docker-hub-credentials') 
            docker.withRegistry('https://gcr.io','gcr:gcr'){
               appimage.push("${env.BUILD_ID}")
